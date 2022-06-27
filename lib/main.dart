@@ -1,13 +1,13 @@
-import 'package:flutter_weather_cubit/cubits/temp_settings/temp_settings_cubit.dart';
-import 'package:flutter_weather_cubit/cubits/theme/theme_cubit.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:flutter_weather_cubit/cubits/weather/weather_cubit.dart';
-import 'package:flutter_weather_cubit/repositories/weather_repository.dart';
-import 'package:flutter_weather_cubit/services/weather_api_services.dart';
+import 'cubits/temp_settings/temp_settings_cubit.dart';
+import 'cubits/theme/theme_cubit.dart';
+import 'cubits/weather/weather_cubit.dart';
 import 'pages/home_page.dart';
+import 'repositories/weather_repository.dart';
+import 'services/weather_api_services.dart';
 
 void main() async {
   await dotenv.load(fileName: '.env');

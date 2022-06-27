@@ -2,10 +2,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
-import 'package:flutter_weather_cubit/models/custom_error.dart';
-import 'package:flutter_weather_cubit/models/weather.dart';
-import 'package:flutter_weather_cubit/repositories/weather_repository.dart';
-
+import '../../models/custom_error.dart';
+import '../../models/weather.dart';
+import '../../repositories/weather_repository.dart';
 part 'weather_state.dart';
 
 class WeatherCubit extends Cubit<WeatherState> {

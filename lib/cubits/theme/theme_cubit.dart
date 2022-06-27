@@ -2,8 +2,9 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter_weather_cubit/constants/constants.dart';
-import 'package:flutter_weather_cubit/cubits/weather/weather_cubit.dart';
+
+import '../../constants/constants.dart';
+import '../weather/weather_cubit.dart';
 part 'theme_state.dart';
 
 class ThemeCubit extends Cubit<ThemeState> {
