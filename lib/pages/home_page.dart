@@ -24,10 +24,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(
         elevation: 0,
-        title: Text('Weather'),
+        title: const Text('Weather'),
         actions: [
           IconButton(
-            icon: Icon(Icons.search),
+            icon: const Icon(Icons.search),
             onPressed: () async {
               _city = await Navigator.push(
                 context,
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
             },
           ),
           IconButton(
-            icon: Icon(Icons.settings),
+            icon: const Icon(Icons.settings),
             onPressed: () {
               Navigator.push(
                 context,
@@ -130,12 +130,12 @@ class _HomePageState extends State<HomePage> {
             Text(
               state.weather.name,
               textAlign: TextAlign.center,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 40.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -147,7 +147,7 @@ class _HomePageState extends State<HomePage> {
                 const SizedBox(height: 10.0),
                 Text(
                   '(${state.weather.country})',
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 18.0,
                   ),
                 ),
@@ -159,7 +159,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Text(
                   showTemperature(state.weather.temp),
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 30.0,
                     color: Colors.red,
                     fontWeight: FontWeight.bold,
@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         showTemperature(state.weather.tempMax),
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16.0,
                         ),
                       ),
@@ -182,7 +182,7 @@ class _HomePageState extends State<HomePage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         showTemperature(state.weather.tempMin),
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 16.0,
                         ),
                       ),
@@ -195,13 +195,13 @@ class _HomePageState extends State<HomePage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Spacer(),
+                const Spacer(),
                 showIcon(state.weather.icon),
                 Expanded(
                   flex: 3,
                   child: formatText(state.weather.description),
                 ),
-                Spacer(),
+                const Spacer(),
               ],
             )
           ],
