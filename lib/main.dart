@@ -1,10 +1,8 @@
+import 'package:flutter_weather_bloc/blocs/blocs.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'cubits/temp_settings/temp_settings_cubit.dart';
-import 'cubits/theme/theme_cubit.dart';
-import 'cubits/weather/weather_cubit.dart';
 import 'pages/home_page.dart';
 import 'repositories/weather_repository.dart';
 import 'services/weather_api_services.dart';
@@ -27,21 +25,21 @@ class MyApp extends StatelessWidget {
       ),
       child: MultiBlocProvider(
         providers: [
-          BlocProvider<WeatherCubit>(
-            create: (context) => WeatherCubit(
+          BlocProvider<WeatherBloc>(
+            create: (context) => WeatherBloc(
               weatherRepository: context.read<WeatherRepository>(),
             ),
           ),
-          BlocProvider<TempSettingsCubit>(
-            create: (context) => TempSettingsCubit(),
+          BlocProvider<TempSettingsBloc>(
+            create: (context) => TempSettingsBloc(),
           ),
-          BlocProvider<ThemeCubit>(
-            create: (context) => ThemeCubit(
-              weatherCubit: context.read<WeatherCubit>(),
+          BlocProvider<ThemeBloc>(
+            create: (context) => ThemeBloc(
+              weatherBloc: context.read<WeatherBloc>(),
             ),
           ),
         ],
-        child: BlocBuilder<ThemeCubit, ThemeState>(
+        child: BlocBuilder<ThemeBloc, ThemeState>(
           builder: (context, state) {
             return MaterialApp(
               title: 'Weather App',
